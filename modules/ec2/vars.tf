@@ -11,10 +11,14 @@ variable "profile" {
 }
 
 # # # VPC # # #
-variable "vpc_name" {
-  description = "The name of the VPC"
+variable "vpc_id" {
+  description = "The ID of the VPC"
   type        = string
-  default     = "VPC Padrão"
+}
+
+variable "subnet_id" {
+  description = "The subnet ID to use for the instance"
+  type        = string
 }
 
 # # # AMI # # #
