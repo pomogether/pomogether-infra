@@ -1,15 +1,3 @@
-variable "region" {
-  description = "The AWS region things are created in"
-  type        = string
-  default     = "us-east-1"
-}
-
-variable "profile" {
-  description = "The AWS profile to be used"
-  type        = string
-  default     = "vianaz"
-}
-
 # # # VPC # # #
 variable "vpc_id" {
   description = "The ID of the VPC"
@@ -35,31 +23,25 @@ variable "ssh_public_key" {
 }
 
 # # # Instance # # #
-variable "instance_type" {
+variable "type" {
   description = "The instance type to use"
   type        = string
   default     = "t2.micro"
 }
 
-variable "instance_count" {
-  description = "The number of instances to create"
-  type        = number
-  default     = 1
-}
-
-variable "instance_ami" {
-  description = "The AMI to use for the instance"
-  type        = string
-  default     = "ami-04b70fa74e45c3917"
-}
-
-variable "instance_prefix" {
+variable "name" {
   description = "The prefix to use for the instance name"
   type        = string
   default     = "main"
 }
 
-variable "instance_sg_ingress" {
+variable "public_ip" {
+  description = "Whether the instance should have a public IP address"
+  type        = bool
+  default     = false
+}
+
+variable "sg_ingress" {
   description = "The inbound rules of security group to use for the instance"
   type = set(object({
     from_port        = number
@@ -83,7 +65,7 @@ variable "instance_sg_ingress" {
   ]
 }
 
-variable "instance_sg_egress" {
+variable "sg_egress" {
   description = "The outbound rules of security group to use for the instance"
   type = set(object({
     from_port        = number
