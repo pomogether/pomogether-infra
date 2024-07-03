@@ -20,4 +20,6 @@ variable "route_table_config" {
   type = list(object({
     name = string
   }))
+
+  default = []
 }
