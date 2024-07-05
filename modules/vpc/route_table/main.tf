@@ -1,13 +1,13 @@
 resource "aws_default_route_table" "main" {
-  default_route_table_id = var.default_route_table_config.id
+  default_route_table_id = var.public_route_table_config.id
 
   route {
-    cidr_block = var.default_route_table_config.cidr_block
-    gateway_id = var.default_route_table_config.gateway_id
+    cidr_block = var.public_route_table_config.cidr_block
+    gateway_id = var.public_route_table_config.gateway_id
   }
 
   tags = {
-    Name = var.default_route_table_config.name
+    Name = var.public_route_table_config.name
   }
 }
 

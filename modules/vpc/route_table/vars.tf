@@ -4,7 +4,7 @@ variable "vpc_id" {
 }
 
 # # # Default Route Table # # #
-variable "default_route_table_config" {
+variable "public_route_table_config" {
   description = "The configuration for the default route table"
   type = object({
     id         = string

@@ -7,9 +7,9 @@ variable "vpc_id" {
 variable "subnet_config" {
   description = "The CIDR blocks to be used for the subnet(s)"
   type = list(object({
-    cidr_block     = string
-    az             = string
-    route_table_id = string
+    cidr_block  = string
+    az          = string
+    route_table = string
   }))
 }
 
