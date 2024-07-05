@@ -7,7 +7,7 @@ on:
       
 
 jobs:
-  plan-terraform:
+  apply-terraform:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout to branch
