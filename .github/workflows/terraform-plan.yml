@@ -1,4 +1,4 @@
-name: Terraform Workflow
+name: Terraform Plan
 
 on:
     pull_request:
@@ -33,7 +33,7 @@ jobs:
 
       - name: Run Terraform Plan
         id: plan
-        run: terraform plan -no-color -var-file=tfvars/production.tfvars
+        run: terraform plan -no-color -var-file=tfvars/production.tfvars -out=tfplan
 
       - name: Update Pull Request
         uses: actions/github-script@v7
