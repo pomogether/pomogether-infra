@@ -4,12 +4,6 @@ variable "region" {
   default     = "us-east-1"
 }
 
-variable "profile" {
-  description = "The AWS profile to be used"
-  type        = string
-  default     = "vianaz"
-}
-
 variable "vpc_cidr_block" {
   description = "The VPC configuration"
   type        = string
